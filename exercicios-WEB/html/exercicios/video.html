@@ -1,0 +1,66 @@
+<video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<script>
+    const meuVideo = document.querySelector('#meuVideo')
+
+    function attBarra(callback) {
+        setTimeout(() => {
+            if(meuVideo.currentTime == meuVideo.duration) {
+                callback()
+            } else {
+            const div = document.querySelector('[wm-progresso] > div')
+            console.log(`${((meuVideo.currentTime).toFixed(2) * 100 / (meuVideo.duration).toFixed(2)).toFixed(0)}%`)
+            div.style.width = `${((meuVideo.currentTime).toFixed(2) * 100 / (meuVideo.duration).toFixed(2)).toFixed(0)}%`
+            attBarra(callback)
+            }
+        }, 400);
+    }
+
+    document.querySelectorAll('[wm-play]').forEach(play => {
+        play.onclick = function() {
+            meuVideo.play()
+            start()
+        }
+    })
+
+    document.querySelectorAll('[wm-pause]').forEach(pause => {
+        pause.onclick = function() {
+            meuVideo.pause()
+        }
+    })
+
+    function start() {
+        attBarra(() => {
+          console.log('Video finalizado')
+        })
+    }
+</script>
+
+<style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .progresso div {
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>

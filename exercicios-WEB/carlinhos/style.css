@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.conteudo {
+    flex-grow: 3;
+}
+
+.menu-e {
+    margin-left: 0;
+    width: 300px;
+}
+
+.menu-d {
+    margin-right: 0;
+    flex-grow: 1;
+}
+
+.menu-h ul {
+    list-style: none;
+    padding: 0;
+    background-color: rgb(36, 36, 36);
+    height: 100vh;
+}
+
+.menu-principal {
+    z-index: 1;
+}
+
+.menu-principal ul li {
+    display: inline-block;
+}
+
+.menu-principal ul {
+    list-style: none;
+    padding: 0;
+    background-color: rgb(36, 36, 36);
+}
+
+.menu-h ul li a {
+    color: #f1f1f1;
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.menu-principal ul li a {
+    color: #f1f1f1;
+    padding: 20px;
+    display: block;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.menu-h ul li a:hover {
+    background-color: rgb(24, 139, 233);
+}
+
+.menu-principal ul li a:hover {
+    background-color: rgb(24, 139, 233);
+}
+
+.container-conteudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item div{
+    margin-top: 50px;
+}
+
+.footer {
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(45,41,41,1) 48%);
+    height: 100px;
+}
+
+.fonte-footer {
+    text-align: right;
+    color: ivory;
+    margin-right: 100px;
+    margin-top: -2px;
+}

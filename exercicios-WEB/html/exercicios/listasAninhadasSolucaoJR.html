@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<style>
+    
+</style>
+
+<h1>Projeto</h1>
+<ul class="tree">
+    <li><a href="javascript:abreFecha('pasta1')">backend</a>
+        <ul id="pasta1">
+            <li><a href="javascript:abreFecha('pasta3')">app</a>
+                <ul id="pasta3">
+                    <li>produtos.js</li>
+                    <li>usuarios.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:abreFecha('pasta4')">config</a>
+                <ul id="pasta4">
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <a href="javascript:abreFecha('pasta2')">frontend</a>
+        <ul id="pasta2">
+            <li>
+                <a href="javascript:abreFecha('pasta5')">public</a>
+                <ul id="pasta5">
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>app.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    function abreFecha(elemento) {
+        let ex = document.getElementById(elemento)
+
+        if(ex.style.display == "none") {
+            ex.style.display = "block"
+        } else {
+            ex.style.display = "none"
+        }
+    }
+</script>
